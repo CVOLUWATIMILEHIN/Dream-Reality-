@@ -1,0 +1,6 @@
+{
+  "name": "Dreams to Reality Youth and Children Initiative",
+  "description": "Official portal and cinematic web platform for Dreams to Reality Youth and Children Initiative (DRYCI), dedicated to educational support, libraries, and youth leadership development in Nigeria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
