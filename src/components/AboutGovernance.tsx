@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import imageModestus from './Pastor Modestus Chukwulaka.jpeg';
-import imageEmeka from './Pastor Emeka Onuchukwu.jpeg';
-import imageVal from './Mr. Val Okafor..jpeg';
-import imageTaiwo from './Professor Taiwo Amos.jpeg';
+import {
+  imageModestus,
+  imageEmeka,
+  imageVal,
+  imageTaiwo
+} from '../data/mediaAssets';
 
 export default function AboutGovernance() {
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});

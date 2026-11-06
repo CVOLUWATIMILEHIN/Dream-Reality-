@@ -16,16 +16,18 @@ import {
   ExternalLink
 } from 'lucide-react';
 
-import gallery29 from './gallery_calabar_20260205_115959.jpg';
-import gallery30 from './gallery_calabar_20260205_111722.jpg';
-import gallery31 from './gallery_calabar_20260205_112327.jpg';
-import gallery32 from './gallery_calabar_20260205_113039.jpg';
-import gallery33 from './gallery_calabar_20260205_113703.jpg';
-import gallery34 from './gallery_calabar_20260205_114311.jpg';
-import gallery35 from './gallery_calabar_20260205_114526.jpg';
-import epiphanyFlyer from './epiph.png';
-import gallery49 from './gallery_calabar_gallery_49.jpg';
-import gallery50 from './gallery_calabar_gallery_50.jpg';
+import {
+  calabar1 as gallery29,
+  calabar2 as gallery30,
+  calabar3 as gallery31,
+  calabar4 as gallery32,
+  calabar5 as gallery33,
+  calabar6 as gallery34,
+  calabar7 as gallery35,
+  epiphanyFlyer,
+  calabar8 as gallery49,
+  calabar9 as gallery50
+} from '../data/mediaAssets';
 
 interface LatestNewsEventsProps {
   onNavigate: (section: string) => void;
@@ -225,16 +227,9 @@ export default function LatestNewsEvents({ onNavigate }: LatestNewsEventsProps) 
                         alt={item.title} 
                         referrerPolicy="no-referrer"
                         onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          if (item.category === 'Conferences') {
-                            target.src = gallery29;
-                          } else if (item.category === 'Outreaches') {
-                            target.src = gallery30;
-                          } else if (item.category === 'Volunteers' || item.category === 'Impact') {
-                            target.src = gallery32;
-                          } else {
-                            target.src = gallery33;
-                          }
+                          const target = e.currentTarget;
+                          target.onerror = null;
+                          target.src = gallery29;
                         }}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
@@ -390,16 +385,9 @@ export default function LatestNewsEvents({ onNavigate }: LatestNewsEventsProps) 
                   alt={activeArticle.title} 
                   referrerPolicy="no-referrer"
                   onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    if (activeArticle.category === 'Conferences') {
-                      target.src = gallery29;
-                    } else if (activeArticle.category === 'Outreaches') {
-                      target.src = gallery30;
-                    } else if (activeArticle.category === 'Volunteers' || activeArticle.category === 'Impact') {
-                      target.src = gallery32;
-                    } else {
-                      target.src = gallery33;
-                    }
+                    const target = e.currentTarget;
+                    target.onerror = null;
+                    target.src = gallery29;
                   }}
                   className="w-full h-full object-cover"
                 />

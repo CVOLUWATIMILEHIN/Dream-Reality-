@@ -1,5 +1,4 @@
-// Auto-generated and curated Calabar & DRYCI images (de-duplicated by content size)
-const globbedImages = import.meta.glob('../components/gallery_calabar_*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}', { eager: true });
+import { GALLERY_CALABAR_MAP } from './mediaAssets';
 
 export interface PhotoItem {
   id: string;
@@ -105,11 +104,9 @@ const UNIQUE_FILENAMES = new Set([
 const parsedPhotos: PhotoItem[] = [];
 let index = 1;
 
-for (const [filePath, module] of Object.entries(globbedImages)) {
-  const url = (module as any).default || module;
+for (const [fileName, url] of Object.entries(GALLERY_CALABAR_MAP)) {
   if (!url) continue;
 
-  const fileName = filePath.split('/').pop() || '';
   if (!UNIQUE_FILENAMES.has(fileName)) {
     continue; // Remove duplicates and limit count!
   }

@@ -32,14 +32,12 @@ import HomeParticularities from './components/HomeParticularities';
 import MainAbout from './components/MainAbout';
 import MainPrograms from './components/MainPrograms';
 import MainImpact from './components/MainImpact';
-import MainGallery from './components/MainGallery';
 import MainVolunteerForm from './components/MainVolunteerForm';
 import MainContact from './components/MainContact';
 import MainFooter from './components/MainFooter';
 import DryciLogo from './components/DryciLogo';
 import LatestNewsEvents from './components/LatestNewsEvents';
 import MainEpiphany from './components/MainEpiphany';
-import EpiphanyPopup from './components/EpiphanyPopup';
 import SupportWidget from './components/SupportWidget';
 
 export default function App() {
@@ -120,17 +118,12 @@ export default function App() {
                       <MainHero onNavigate={setActiveSection} />
                       <HomeParticularities onNavigate={setActiveSection} />
                       <LatestNewsEvents onNavigate={setActiveSection} />
-                      <EpiphanyPopup onViewDetails={() => {
-                        setActiveSection('epiphany');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }} />
                     </>
                   )}
                   {activeSection === 'about' && <MainAbout />}
                   {activeSection === 'epiphany' && <MainEpiphany onNavigate={setActiveSection} />}
                   {activeSection === 'programs' && <MainPrograms onNavigate={setActiveSection} />}
                   {activeSection === 'impact' && <MainImpact onNavigate={setActiveSection} />}
-                  {activeSection === 'gallery' && <MainGallery onNavigate={setActiveSection} />}
                   {activeSection === 'volunteer' && <MainVolunteerForm />}
                   {activeSection === 'contact' && <MainContact />}
                 </motion.div>
@@ -401,8 +394,26 @@ export default function App() {
                   </p>
                 </div>
 
-                <div className="text-xs text-slate-500 font-mono">
-                  <span>&copy; {new Date().getFullYear()} DRYCI Initiative. Crafted with premium standards.</span>
+                <div className="text-xs text-slate-500 font-mono flex flex-wrap items-center justify-center gap-3">
+                  <span>&copy; {new Date().getFullYear()} DRYCI Initiative.</span>
+                  <span>&bull;</span>
+                  <a
+                    href="https://www.facebook.com/DRYCI"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-300 hover:text-white transition-colors"
+                  >
+                    Facebook
+                  </a>
+                  <span>&bull;</span>
+                  <a
+                    href="https://oluwatimilehincv.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#F57C00] hover:text-white font-bold transition-colors"
+                  >
+                    Built by CV by Vincent
+                  </a>
                 </div>
               </div>
             </footer>

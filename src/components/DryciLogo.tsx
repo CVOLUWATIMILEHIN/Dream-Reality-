@@ -1,5 +1,5 @@
 import React from 'react';
-import brandLogo from './brand_logo.jpg';
+import { brandLogo } from '../data/mediaAssets';
 
 interface DryciLogoProps {
   className?: string;
@@ -20,7 +20,7 @@ export default function DryciLogo({
         src={brandLogo}
         alt="DRYCI Logo"
         referrerPolicy="no-referrer"
-        className={`${className} object-contain transition-transform duration-300 hover:scale-105 rounded-full`}
+        className={`${className} object-contain transition-transform duration-300 hover:scale-105 rounded-xl bg-black shadow-sm`}
       />
 
       {/* Brand text rendering */}

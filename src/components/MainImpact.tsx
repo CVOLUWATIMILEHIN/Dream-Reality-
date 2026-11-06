@@ -23,18 +23,20 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-import heroSection1 from './gallery_calabar_20260205_115959.jpg';
-import heroSection2 from './gallery_calabar_20260205_112724.jpg';
-import heroSection3 from './gallery_calabar_20260205_113039.jpg';
-import heroSection4 from './gallery_calabar_20260205_114311.jpg';
-import heroSection5 from './gallery_calabar_20260205_114701.jpg';
-import gallery29 from './gallery_calabar_20260205_115959.jpg';
-import gallery30 from './gallery_calabar_20260205_111722.jpg';
-import gallery31 from './gallery_calabar_20260205_112327.jpg';
-import gallery32 from './gallery_calabar_20260205_113039.jpg';
-import gallery33 from './gallery_calabar_20260205_113703.jpg';
-import gallery34 from './gallery_calabar_20260205_114311.jpg';
-import gallery35 from './gallery_calabar_20260205_114526.jpg';
+import {
+  calabar1 as heroSection1,
+  calabar11 as heroSection2,
+  calabar9 as heroSection3,
+  calabar12 as heroSection4,
+  calabar13 as heroSection5,
+  calabar7 as gallery29,
+  calabar2 as gallery30,
+  calabar3 as gallery31,
+  calabar4 as gallery32,
+  calabar5 as gallery33,
+  calabar6 as gallery34,
+  calabar8 as gallery35,
+} from '../data/mediaAssets';
 
 interface MainImpactProps {
   onNavigate?: (section: string) => void;
@@ -584,7 +586,8 @@ export default function MainImpact({ onNavigate }: MainImpactProps) {
                   alt={image.title} 
                   referrerPolicy="no-referrer"
                   onError={(e) => {
-                    const target = e.target as HTMLImageElement;
+                    const target = e.currentTarget;
+                    target.onerror = null;
                     const titleLower = image.title.toLowerCase();
                     if (titleLower.includes('reading') || titleLower.includes('library') || titleLower.includes('writing') || titleLower.includes('classroom')) {
                       target.src = heroSection1;

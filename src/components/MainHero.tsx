@@ -10,102 +10,59 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-import uploadedImage49 from './gallery_calabar_gallery_49.jpg';
-import uploadedImage50 from './gallery_calabar_gallery_50.jpg';
-import uploadedImageEpiph from './epiph.png';
-
-// Import actual, high-quality real uploaded DRYCI Calabar images
-import uploadedImage1 from './gallery_calabar_20260205_115959.jpg';
-import uploadedImage2 from './gallery_calabar_20260205_111722.jpg';
-import uploadedImage3 from './gallery_calabar_20260205_112327.jpg';
-import uploadedImage4 from './gallery_calabar_20260205_113039.jpg';
-import uploadedImage5 from './gallery_calabar_20260205_113703.jpg';
-import uploadedImage6 from './gallery_calabar_20260205_114311.jpg';
-import uploadedImage7 from './gallery_calabar_20260205_114526.jpg';
-import uploadedImage8 from './gallery_calabar_20260205_114701.jpg';
-import uploadedImage9 from './gallery_calabar_20260205_112724.jpg';
+import {
+  heroSlide1,
+  heroSlide2,
+  heroSlide3,
+  heroSlide4,
+  heroSlide5
+} from '../data/mediaAssets';
 
 const HERO_SLIDES = [
   {
-    image: uploadedImage49,
+    image: heroSlide1,
     region: "Calabar, Nigeria",
-    focus: "Curated active scholar launch and group academic session",
+    focus: "Youth & Children Empowerment Outreach",
     subtitle: "Where Dreams Come True",
     titleFirst: "Transforming Dreams",
     titleHighlight: "Into Reality",
-    description: "Raising a generation of purpose-driven, morally grounded, and academically equipped leaders through our Calabar academic empowerment drives."
+    description: "Raising a generation of purpose-driven, morally grounded, and academically equipped leaders through our Calabar empowerment drives."
   },
   {
-    image: uploadedImage50,
+    image: heroSlide2,
     region: "Calabar, Nigeria",
-    focus: "Scholars participating in active workshops",
+    focus: "Educational Materials & Support Drive",
     subtitle: "Education & Sponsorship",
     titleFirst: "The Calabar",
     titleHighlight: "Scholars Drive",
     description: "Providing school bags, notebooks, and writing materials to vulnerable children to make education accessible and inspiring."
   },
   {
-    image: uploadedImageEpiph,
+    image: heroSlide3,
     region: "Calabar, Nigeria",
-    focus: "Young minds celebrating academic and moral mentorship",
-    subtitle: "Mentorship & Guidance",
-    titleFirst: "Values & Character",
-    titleHighlight: "Formative Sessions",
-    description: "Engaging children in mentorship circles where character, morals, and self-esteem are nurtured by dedicated volunteers."
+    focus: "Mentorship & Moral Foundation Workshops",
+    subtitle: "Character & Guidance",
+    titleFirst: "Awakening Purpose",
+    titleHighlight: "& Leadership",
+    description: "Nurturing curiosity, confidence, and moral foundation in young scholars through interactive mentorship sessions."
   },
   {
-    image: uploadedImage1,
+    image: heroSlide4,
     region: "Calabar, Nigeria",
-    focus: "Calabar primary school academic support launch group",
+    focus: "Scholarship & Academic Excellence Launch",
     subtitle: "Empowerment & Growth",
     titleFirst: "Academic Support",
     titleHighlight: "Launches",
     description: "Coordinating resources, books, bags, and writing materials to support underserved public schools."
   },
   {
-    image: uploadedImage2,
+    image: heroSlide5,
     region: "Calabar, Nigeria",
-    focus: "Individual scholarship recipient at Calabar outreach",
-    subtitle: "Opportunity",
+    focus: "Community Outreach & Youth Development",
+    subtitle: "Opportunity & Hope",
     titleFirst: "Giving Every Child",
     titleHighlight: "A Voice",
     description: "Removing financial and educational barriers to help bright young minds reach their full scholarly potential."
-  },
-  {
-    image: uploadedImage3,
-    region: "Calabar, Nigeria",
-    focus: "Primary pupils reading moral development worksheets",
-    subtitle: "Values Development",
-    titleFirst: "Building Strong",
-    titleHighlight: "Foundations",
-    description: "Instilling positive ethical behavior, self-worth, and leadership excellence from a young age."
-  },
-  {
-    image: uploadedImage4,
-    region: "Calabar, Nigeria",
-    focus: "Primary boys receiving books and leadership coaching",
-    subtitle: "Youth Capacity Building",
-    titleFirst: "Foundational Literacy",
-    titleHighlight: "And Coaching",
-    description: "Empowering children with core school resources and literacy skills needed for a lifetime of confidence and excellence."
-  },
-  {
-    image: uploadedImage5,
-    region: "Calabar, Nigeria",
-    focus: "Primary and secondary scholars celebrating educational launch",
-    subtitle: "Community & Partnership",
-    titleFirst: "Reaching Every",
-    titleHighlight: "Young Mind",
-    description: "Building community-wide collaborations to ensure no child is left behind in reaching their maximum potential."
-  },
-  {
-    image: uploadedImage6,
-    region: "Calabar, Nigeria",
-    focus: "Group mentorship sessions for future leaders",
-    subtitle: "Leadership Development",
-    titleFirst: "Nurturing Future",
-    titleHighlight: "Global Leaders",
-    description: "Cultivating leadership capability, creative problem-solving skills, and ethical behavior in youth to empower tomorrow's trailblazers."
   }
 ];
 
@@ -162,6 +119,11 @@ export default function MainHero({ onNavigate }: HeroProps) {
             src={slide.image}
             alt={slide.focus}
             referrerPolicy="no-referrer"
+            onError={(e) => {
+              const target = e.currentTarget;
+              target.onerror = null;
+              target.src = heroSlide1;
+            }}
             className={`absolute inset-0 w-full h-full object-cover transition-all duration-[1200ms] ease-in-out will-change-transform ${
               index === currentSlide 
                 ? 'opacity-100 scale-100' 

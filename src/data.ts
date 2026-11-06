@@ -1,7 +1,5 @@
 import { ColorToken, FontToken, ButtonToken, CardToken, AnimationToken, ImagePhilosophy } from './types';
-import gallery30 from './components/gallery_calabar_20260205_111722.jpg';
-import gallery29 from './components/gallery_calabar_20260205_115959.jpg';
-import gallery32 from './components/gallery_calabar_20260205_113039.jpg';
+import { calabar2 as gallery30, calabar1 as gallery29, calabar4 as gallery32 } from './data/mediaAssets';
 
 export const BRAND_COLORS: ColorToken[] = [
   {

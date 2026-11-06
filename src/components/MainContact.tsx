@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, ShieldCheck, HelpCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, ShieldCheck, HelpCircle, Facebook } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function MainContact() {
@@ -107,7 +107,7 @@ export default function MainContact() {
                 <a href="tel:+2348107911934" className="text-slate-800 text-xs font-bold hover:text-[#F57C00] block">+234 810 791 1934</a>
               </div>
 
-              <div className="p-5 bg-white border border-slate-150 rounded-2xl shadow-sm text-left space-y-2 sm:col-span-2">
+              <div className="p-5 bg-white border border-slate-150 rounded-2xl shadow-sm text-left space-y-2">
                 <div className="w-9 h-9 rounded-xl bg-emerald-500/5 flex items-center justify-center text-emerald-600">
                   <MapPin className="w-4 h-4" />
                 </div>
@@ -115,9 +115,21 @@ export default function MainContact() {
                 <p className="text-slate-800 text-xs font-bold leading-normal">
                   Calabar, Cross River State, Nigeria
                 </p>
-                <p className="text-slate-500 text-[11px] leading-relaxed">
-                  Our central hub of operation coordinating leadership development, education, and mentorship initiatives.
-                </p>
+              </div>
+
+              <div className="p-5 bg-white border border-slate-150 rounded-2xl shadow-sm text-left space-y-2">
+                <div className="w-9 h-9 rounded-xl bg-[#0D47A1]/10 flex items-center justify-center text-[#0D47A1]">
+                  <Facebook className="w-4 h-4" />
+                </div>
+                <span className="font-mono text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Official Facebook</span>
+                <a
+                  href="https://www.facebook.com/DRYCI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0D47A1] text-xs font-bold hover:text-[#F57C00] block transition-colors"
+                >
+                  facebook.com/DRYCI
+                </a>
               </div>
             </div>
 

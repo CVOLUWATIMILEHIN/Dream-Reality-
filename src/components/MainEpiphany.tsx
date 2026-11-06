@@ -32,16 +32,20 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-// Import local images for authenticity
-import epiphanyFlyer from './epiph.png';
-import uploadedImage49 from './gallery_calabar_gallery_49.jpg';
-import uploadedImage50 from './gallery_calabar_gallery_50.jpg';
-
-// Import actual high-quality real uploaded DRYCI Calabar outreach images
-import uploadedImage1 from './gallery_calabar_20260205_115959.jpg';
-import uploadedImage2 from './gallery_calabar_20260205_111722.jpg';
-import uploadedImage3 from './gallery_calabar_20260205_112327.jpg';
-import uploadedImage4 from './gallery_calabar_20260205_113039.jpg';
+// Import media assets from centralized registry
+import {
+  epiphanyFlyer,
+  calabar8 as uploadedImage49,
+  calabar9 as uploadedImage50,
+  calabar1 as uploadedImage1,
+  calabar2 as uploadedImage2,
+  calabar3 as uploadedImage3,
+  calabar4 as uploadedImage4,
+  imageModestus,
+  imageEmeka,
+  imageVal,
+  imageTaiwo
+} from '../data/mediaAssets';
 
 const EPIPHANY_HERO_IMAGES = [
   uploadedImage49,
@@ -52,12 +56,6 @@ const EPIPHANY_HERO_IMAGES = [
   uploadedImage3,
   uploadedImage4
 ];
-
-// Import trustees/speakers images
-import imageModestus from './Pastor Modestus Chukwulaka.jpeg';
-import imageEmeka from './Pastor Emeka Onuchukwu.jpeg';
-import imageVal from './Mr. Val Okafor..jpeg';
-import imageTaiwo from './Professor Taiwo Amos.jpeg';
 
 interface EpiphanyProps {
   onNavigate: (section: string) => void;
@@ -80,9 +78,10 @@ export default function MainEpiphany({ onNavigate }: EpiphanyProps) {
   // Official Google Form link as specified by the user
   const GOOGLE_FORMS_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSdVtEEFM1s_jdzJcSP51zjHxCcmgdR-bL0Uc_O1gFcurIJPiw/viewform";
 
-  // Calculate countdown to August 26, 2026
+  // Calculate countdown to August 26 conference
   useEffect(() => {
-    const targetDate = new Date('2026-08-26T08:00:00').getTime();
+    const baseTarget = new Date('2026-08-26T08:00:00').getTime();
+    const targetDate = Date.now() < baseTarget ? baseTarget : new Date('2027-08-26T08:00:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -978,7 +977,7 @@ export default function MainEpiphany({ onNavigate }: EpiphanyProps) {
             <div id="contact-socials-block" className="pt-6 border-t border-slate-200/60 max-w-lg mx-auto text-center space-y-4">
               <span id="socials-label" className="text-xs font-mono text-slate-400 uppercase tracking-widest block font-bold">Dreams to Reality Youth and Children Initiative</span>
               <div id="socials-flex" className="flex justify-center gap-4">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-[#0D47A1] hover:border-[#0D47A1] transition-all">
+                <a href="https://www.facebook.com/DRYCI" target="_blank" rel="noopener noreferrer" aria-label="DRYCI Official Facebook Page" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-[#0D47A1] hover:border-[#0D47A1] transition-all">
                   <Facebook className="w-4 h-4" />
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-[#0D47A1] hover:border-[#0D47A1] transition-all">

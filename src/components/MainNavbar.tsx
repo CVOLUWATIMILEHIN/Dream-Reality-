@@ -32,7 +32,6 @@ export default function MainNavbar({ onToggleGuide, showGuide, activeSection, on
     { label: 'EPIPHANY', id: 'epiphany' },
     { label: 'Programs', id: 'programs' },
     { label: 'Impact', id: 'impact' },
-    { label: 'Gallery', id: 'gallery' },
     { label: 'Volunteer', id: 'volunteer' },
     { label: 'Contact', id: 'contact' },
   ];

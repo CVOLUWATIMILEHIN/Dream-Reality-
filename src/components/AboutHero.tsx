@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import heroSection1 from './gallery_calabar_20260205_115959.jpg';
+import { calabar1 as heroSection1 } from '../data/mediaAssets';
 
 interface AboutHeroProps {
   onScrollToStory: () => void;

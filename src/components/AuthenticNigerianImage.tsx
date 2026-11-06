@@ -1,15 +1,19 @@
 import { Camera, MapPin, ShieldCheck } from 'lucide-react';
-
-import calabar1 from './gallery_calabar_20260205_115959.jpg';
-import calabar2 from './gallery_calabar_20260205_111722.jpg';
-import calabar3 from './gallery_calabar_20260205_112327.jpg';
-import calabar4 from './gallery_calabar_20260205_113039.jpg';
-import calabar5 from './gallery_calabar_20260205_113703.jpg';
-import calabar6 from './gallery_calabar_20260205_114311.jpg';
-import calabar7 from './gallery_calabar_20260205_114526.jpg';
-import calabar8 from './gallery_calabar_gallery_49.jpg';
-import calabar9 from './gallery_calabar_gallery_50.jpg';
-import calabar10 from './gallery_calabar_20260205_114701.jpg';
+import {
+  calabar1,
+  calabar2,
+  calabar3,
+  calabar4,
+  calabar5,
+  calabar6,
+  calabar7,
+  calabar8,
+  calabar9,
+  calabar10,
+  calabar11,
+  calabar12,
+  calabar13,
+} from '../data/mediaAssets';
 
 interface AuthenticNigerianImageProps {
   title: string;
@@ -21,48 +25,21 @@ interface AuthenticNigerianImageProps {
   className?: string;
 }
 
-// Curated collection of real Calabar school outreach photographs
+// Curated collection of real DRYCI school & conference outreach photographs
 const curatedPhotos = [
-  {
-    url: calabar1,
-    desc: 'Joyful students raising hands in active classroom learning'
-  },
-  {
-    url: calabar2,
-    desc: 'Young children in a reading group smiling with books'
-  },
-  {
-    url: calabar3,
-    desc: 'Primary students writing and collaborating at wooden desks'
-  },
-  {
-    url: calabar4,
-    desc: 'Secondary students gathered together reading in a library'
-  },
-  {
-    url: calabar5,
-    desc: 'Happy children holding study books and laughing'
-  },
-  {
-    url: calabar6,
-    desc: 'A classroom mentor guiding enthusiastic young minds'
-  },
-  {
-    url: calabar7,
-    desc: 'Smiling children celebrating educational access and materials'
-  },
-  {
-    url: calabar8,
-    desc: 'Secondary school students in computer lab or classroom research'
-  },
-  {
-    url: calabar9,
-    desc: 'Neatly organized academic library books'
-  },
-  {
-    url: calabar10,
-    desc: 'Students utilizing digital computers and training resources'
-  }
+  { url: calabar1, desc: 'DRYCI leadership and team at the EPIPHANY conference' },
+  { url: calabar2, desc: 'EPIPHANY conference panelists and mentors on stage' },
+  { url: calabar3, desc: 'Young female scholar speaking at the leadership summit' },
+  { url: calabar4, desc: 'Student participant sharing insights during interactive session' },
+  { url: calabar5, desc: 'Conference delegates engaging in leadership activities' },
+  { url: calabar6, desc: 'Focused student participant during mentorship session' },
+  { url: calabar7, desc: 'Interactive group exercise and peer collaboration' },
+  { url: calabar8, desc: 'Mentors and students in an active workshop circle' },
+  { url: calabar9, desc: 'Creative student stage presentation at EPIPHANY' },
+  { url: calabar10, desc: 'Expressive youth performance and cultural showcase' },
+  { url: calabar11, desc: 'DRYCI facilitators seated during leadership plenaries' },
+  { url: calabar12, desc: 'Conference team evaluating student leadership projects' },
+  { url: calabar13, desc: 'Five student leaders on stage during Q&A session' },
 ];
 
 function getPhotoUrl(title: string, location: string): string {
@@ -123,19 +100,9 @@ export default function AuthenticNigerianImage({
         alt={title}
         referrerPolicy="no-referrer"
         onError={(e) => {
-          const target = e.target as HTMLImageElement;
-          const combined = (title + ' ' + location).toLowerCase();
-          if (combined.includes('enugu') || combined.includes('academic') || combined.includes('school')) {
-            target.src = calabar1;
-          } else if (combined.includes('lagos') || combined.includes('outreach') || combined.includes('community')) {
-            target.src = calabar2;
-          } else if (combined.includes('library') || combined.includes('book') || combined.includes('literacy')) {
-            target.src = calabar4;
-          } else if (combined.includes('leadership') || combined.includes('mentorship') || combined.includes('youth') || combined.includes('ethical')) {
-            target.src = calabar3;
-          } else {
-            target.src = calabar5;
-          }
+          const target = e.currentTarget;
+          target.onerror = null;
+          target.src = calabar1;
         }}
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none z-0"
       />

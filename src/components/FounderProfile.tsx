@@ -13,7 +13,7 @@ import {
   Compass,
   Briefcase
 } from 'lucide-react';
-import imageMoses from './Moses chibueze.jpeg';
+import { imageMoses } from '../data/mediaAssets';
 
 export default function FounderProfile() {
   const highlights = [

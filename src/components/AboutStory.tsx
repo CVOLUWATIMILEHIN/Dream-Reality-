@@ -4,10 +4,12 @@ import { Camera, MapPin, Heart, Sparkles, ShieldCheck, Award, Users } from 'luci
 import AuthenticNigerianImage from './AuthenticNigerianImage';
 import FounderProfile from './FounderProfile';
 
-import heroSection2 from './gallery_calabar_20260205_111722.jpg';
-import heroSection3 from './gallery_calabar_20260205_112327.jpg';
-import heroSection4 from './gallery_calabar_20260205_113039.jpg';
-import heroSection5 from './gallery_calabar_20260205_113703.jpg';
+import {
+  calabar2 as heroSection2,
+  calabar3 as heroSection3,
+  calabar4 as heroSection4,
+  calabar5 as heroSection5,
+} from '../data/mediaAssets';
 
 const whoWeAreSlides = [
   {

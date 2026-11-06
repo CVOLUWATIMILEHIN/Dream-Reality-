@@ -25,11 +25,13 @@ import { programsData } from '../data/programsData';
 import ProgramDetailView from './ProgramDetailView';
 
 // Import official DRYCI Hero images
-import heroSection1 from './gallery_calabar_20260205_115959.jpg';
-import heroSection2 from './gallery_calabar_20260205_112724.jpg';
-import heroSection3 from './gallery_calabar_20260205_113039.jpg';
-import heroSection4 from './gallery_calabar_20260205_114311.jpg';
-import heroSection5 from './gallery_calabar_20260205_114701.jpg';
+import {
+  calabar1 as heroSection1,
+  calabar4 as heroSection2,
+  calabar3 as heroSection3,
+  calabar6 as heroSection4,
+  calabar10 as heroSection5,
+} from '../data/mediaAssets';
 
 interface MainProgramsProps {
   onNavigate?: (section: string) => void;
